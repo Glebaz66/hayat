@@ -1,0 +1,123 @@
+.contact-form {
+    padding: 80px 0;
+
+    &-video {
+        padding-left: 50px;
+
+        .sub-title {
+            margin-bottom: 55px;
+        }
+    
+        .video {
+            margin-bottom: 30px;
+            position: relative;
+            height: 263px;
+
+            iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .show-more {
+            width: 125px;
+            margin: 0 0 0 auto;
+
+            &__link {
+                color: $yellow;
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 20px;
+                position: relative;
+
+                &::before {
+                    content: '';
+                    display: block;
+                    width: 40px;
+                    height: 40px;
+                    background: url('../img/right-arrow.png') no-repeat;
+                    position: absolute;
+                    top: 0;
+                    right: -50px;
+                    z-index: 2;
+                }
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 40px;
+                    height: 46px;
+                    background: $light;
+                    position: absolute;
+                    top: -3px;
+                    right: -60px;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+
+    .form-wrap {
+        background: url('../img/bg-form.png') no-repeat, $light;
+        background-size: contain;
+        padding: 25px;
+        
+        .sub-title {
+            margin-bottom: 45px;
+        }
+        
+        input { 
+            height: 60px;
+            min-width: 300px;
+            width: 60%;
+            padding: 0;
+            border: none;
+            
+            
+            &:not(:last-child){
+                color: $dark-grey;
+                margin-bottom: 20px;
+                width: 80%;
+                padding-left: 20px;
+                font-weight: 500;
+            }
+        }
+
+        input[type=email] {
+            margin-bottom: 40px;
+        }
+    }
+
+    @media screen and(min-width:320px) and (max-width:768px){
+        padding: 0;
+        .padd-0 {
+            padding-right: 0;
+            padding-left: 0;
+        }
+        &-video {
+            padding: 0;
+
+            .sub-title {
+                padding-left: 15px;
+            }
+
+            .show-more {
+                margin: 0 auto 30px;
+            }
+        }
+
+        .form-wrap {
+            background-position: -220px 65px !important;
+
+            .sub-title {
+                text-align: center;
+            }
+
+            input {
+                width: 100% !important;
+            }
+        }
+    }
+}

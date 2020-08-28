@@ -1,0 +1,124 @@
+footer.footer {
+    background: $grey;
+
+    .footer-address {
+        .text {
+            font-size: 14px;
+
+            p {
+                margin-bottom: 0;
+                color: $white;
+            }
+
+            span{
+                font-weight: 500;
+            }
+        }
+    }
+
+    .footer-contacts {
+        margin-top: 20px;
+        margin-right: 0px;
+        margin-left: auto;
+
+        .footer-email {
+            margin-right: 30px;
+
+            a{
+                display: flex;
+                align-items: center;
+                color: $yellow;
+                font-weight: 500;
+                font-size: 18px;
+
+                &::before{
+                    content: '';
+                    background: url('../img/icon-mail.png') no-repeat;
+                    background-size: contain;
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+                    margin-right: 15px;
+                }
+            }
+        }
+
+        .wrap {
+            display: flex;
+
+            .footer-social {
+                a {
+                    margin-right: 5px;
+                }
+            }
+
+            .footer-phone {
+                a {
+                    color: $yellow;
+                    font-weight: 500;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+    .footer-copyright {
+        text-align: right;
+        color: $white;
+        font-size: 14px;
+    }
+
+    @media screen and(min-width:320px) and (max-width:768px){
+        padding: 0;
+
+        .torow {
+            flex-direction: column !important;
+        }
+        .footer-address {
+            margin-bottom: 20px;
+            .text {
+                text-align: center;
+            }
+        }
+
+        .footer-contacts {
+            margin: 20px auto 0;
+            flex-flow: column;
+            align-items: center;
+            margin-bottom: 30px;
+
+            .footer-email,
+            .wrap {
+                display: flex;
+            }
+
+            .footer-email{
+                margin: 0;
+                a {
+                    &::before {
+                        content: none;
+                    }
+                }
+            }
+
+            .wrap {
+                flex-flow: column;
+                align-items: center;
+                margin-bottom: 15px;
+
+                .footer-social,
+                .footer-phone {
+                    display: flex;
+                }
+                
+                .footer-social {
+                    a {
+                        &:not(:last-child) {
+                            margin-right: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

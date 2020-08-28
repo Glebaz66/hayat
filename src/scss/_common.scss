@@ -1,0 +1,38 @@
+.custom-btn {
+    background-color: $yellow;
+    color: $white;
+    padding: 15px 85px;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    border-radius: 0;
+    width: 355px;
+}
+
+.section-title {
+    font-weight: bold;
+    font-size: 60px;
+    line-height: 71px;
+    letter-spacing: 0.05em;
+    color: $light;
+    text-transform: uppercase;
+}
+
+.sub-title {
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 35px;
+    letter-spacing: 0.05em;
+    color: $grey;
+}
+
+.text {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0.05em;
+}
+
+html {
+    scroll-behavior: smooth;
+}

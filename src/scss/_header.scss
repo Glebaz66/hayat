@@ -1,0 +1,174 @@
+header.header {
+    overflow: hidden;
+    
+    .menu {
+        background: url('../img/bg-menu.png') no-repeat;
+
+        .navbar-nav {
+            margin-top: -30px;
+            justify-content: space-around;
+            width: 100%;
+
+            li {
+                a {
+                    text-transform: uppercase;
+                    color: $grey;
+                    font-size: 14px;
+                    font-weight: 500;
+                    transition: $transition;
+                    &:hover {
+                        color: $yellow;
+                    }
+                }
+            }
+        }
+        .header-title {
+            position: relative;
+            height: 520px;
+
+            &__inner {
+                padding: 15% 22%;
+                
+            }
+
+            &::after{
+                content: '';
+                display: block;
+                width: 370px;
+                height: 12px;
+                position: absolute;
+                left: 0;
+                bottom: -5px;
+                background: $yellow;
+                z-index: 1;
+            }
+        }
+    }
+
+    .contacts {
+        background-color: $grey;
+        height: 630px;
+        
+        &-inner {
+            padding-top: 50px;
+            position: relative;
+
+            .phone {
+                margin-right: 15px;
+            }
+
+            .phone,
+            .email {
+                a {
+                    color: $yellow;
+                    font-weight: bold;
+                    font-size: 18px;
+                    line-height: 21px;
+                }
+            }
+            .email {
+                a {
+                    font-weight: 400;
+                }
+            }
+
+            .header-banner {
+                position: absolute;
+                left: -100px;
+                top: 150px;
+
+                .mobile {
+                    display: none;
+                    visibility: hidden;
+                }
+
+                &::after {
+                    content: '';
+                    background: url('../img/dots.png') no-repeat;
+                    display: block;
+                    width: 113px;
+                    height: 200px;
+                    position: absolute;
+                    top: -150px;
+                    right: -46px;
+                    z-index: 2;
+                    background-size: contain !important;
+                }
+
+                .custom-btn {
+                    position: absolute;
+                    right: -35px;
+                    bottom: -20px;
+
+                    a {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and(min-width:320px) and(max-width:992px) {
+        .menu {
+            margin-bottom: 45px;
+            background: none !important;
+
+            .header-title {
+                display: none;
+                visibility: hidden;
+            }
+        }
+
+        .contacts {
+            background: url('../img/bg-menu.png') no-repeat, $grey;
+            background-position: 97% 0;
+
+            &-inner {
+                .wrap {
+                    display: none;
+                    visibility: hidden;
+                }
+
+                .email {
+                   display: none;
+                   visibility: hidden; 
+                }
+
+                .header-banner {
+                    top: -40px;
+                    right: -8px;
+                    left: 0;
+                    padding: 0 15px 40px;
+
+                    .mobile {
+                        display: block;
+                        visibility: visible;
+                    }
+                    
+                    .header-title {
+                        font-size: 28px;
+                        color: $white;
+                        margin-bottom: 60px !important;
+                    }
+
+                    &-img {
+                       margin-bottom: 70px;
+                    }
+
+                    &::after{
+                        content: unset;
+                    }
+
+                    .custom-btn {
+                        // position: unset;
+                        right: unset;
+                        bottom: 10px;
+                        width: 90%;
+                        padding: 15px;
+                        z-index: 1;
+                    }
+                }
+            }
+        }
+    }
+}    

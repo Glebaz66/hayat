@@ -1,17 +1,8 @@
-body {
-    background-color: red;
-    font-size: 47px;
-    display: flex;
-
-    @media screen and(max-width:320px){
-        h1 {
-            font-size: 20px;
-        }
-    }
-    @media screen and(max-width:320px){
-        h1 {
-            font-size: 30px;
-            color: green;
-        }
-    }
-}
+@import '_vars.scss';
+@import '_common.scss';
+@import '_header.scss';
+@import '_about.scss';
+@import '_banner.scss';
+@import '_portfolio.scss';
+@import '_contact-form.scss';
+@import '_footer.scss';
