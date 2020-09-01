@@ -1,12 +1,11 @@
 header.header {
-    overflow: hidden;
-    
     .menu {
         background: url('../img/bg-menu.png') no-repeat;
 
         .navbar-nav {
             margin-top: -30px;
             justify-content: space-around;
+            align-items: center;
             width: 100%;
 
             li {
@@ -98,7 +97,7 @@ header.header {
                 .custom-btn {
                     position: absolute;
                     right: -35px;
-                    bottom: -20px;
+                    bottom: 25px;
 
                     a {
                         color: $white;
@@ -109,9 +108,106 @@ header.header {
     }
 
     @media screen and(min-width:320px) and(max-width:992px) {
+        margin-bottom: unset;
+        
         .menu {
-            margin-bottom: 45px;
+            margin-bottom: 85px;
             background: none !important;
+
+            .icon-bar {
+                width: 30px;
+                height: 3px;
+                background-color: $grey;
+                display: block;
+                transition: all .2s ease-in-out;
+                margin-top: 5px;
+                border-radius: 30%;
+            }
+             
+            .navbar-toggler {
+              border: none;
+              background: transparent !important;
+
+              &:active,
+                &:focus {
+                    outline: none;
+                }
+
+                .top-bar {
+                    transform: rotate(45deg);
+                    transform-origin: 10% 10%;
+                }
+
+                .middle-bar {
+                    opacity: 0;
+                }
+
+                .bottom-bar {
+                    transform: rotate(-45deg);
+                    transform-origin: 10% 90%;
+                }
+            }
+            .navbar-toggler.collapsed .icon-bar {border-radius: 0;}
+            .navbar-toggler.collapsed .top-bar {
+                transform: rotate(0);
+                border-radius: 0;
+            }
+            .navbar-toggler.collapsed .middle-bar {
+                opacity: 1;
+            }
+            .navbar-toggler.collapsed .bottom-bar {
+                transform: rotate(0);
+                border-radius: 0;
+            }
+            
+            .navbar-brand {
+                img{
+                    width: 80%;
+                }
+            }
+
+            .navbar-nav {
+                margin-top: 0;
+                margin-bottom: 30px;
+
+                li {
+                    &:not(:last-child){
+                        margin-bottom: 15px;
+                    }
+
+                    a{
+                        font-size: 18px;
+                        font-weight: 300;
+                    }
+                }
+            }
+
+            .mobile-contacts {
+                &-phone {
+                    a {
+                        color: $yellow;
+                        font-weight: 400;
+                        font-size: 20px;
+                    }
+                }
+
+                &-social{
+                    margin-bottom: 15px;
+
+                    a {
+                        margin-right: 5px;
+                    }
+                }
+
+                &-email{
+                    margin-bottom: 30px;
+                    
+                    a{
+                        font-size: 20px;
+                        color: $yellow;
+                    }
+                }
+            }
 
             .header-title {
                 display: none;
@@ -120,6 +216,7 @@ header.header {
         }
 
         .contacts {
+            height: auto;
             background: url('../img/bg-menu.png') no-repeat, $grey;
             background-position: 97% 0;
 
@@ -135,24 +232,51 @@ header.header {
                 }
 
                 .header-banner {
-                    top: -40px;
-                    right: -8px;
-                    left: 0;
-                    padding: 0 15px 40px;
+                    padding: 0 15px 0;
+                    text-align: center;
+                    position: unset;
 
                     .mobile {
                         display: block;
                         visibility: visible;
                     }
-                    
+                   
                     .header-title {
-                        font-size: 28px;
+                        font-size: 25px;
                         color: $white;
-                        margin-bottom: 60px !important;
+                        margin-bottom: 0;
+                        text-align: left;
+
+                        &__inner {
+                            padding: 0 30px 50px;
+                            margin-bottom: 30px;
+                            letter-spacing: 0.05em;
+                        }
                     }
 
                     &-img {
-                       margin-bottom: 70px;
+                       margin-bottom: 25px;
+                       margin-top: -120px;
+                       padding: 0 0 0 32px;
+                       position: relative;
+
+                       &:after {
+                        content: '';
+                        background: url('../img/dots.png') no-repeat;
+                        background-size: cover !important;
+                        position: absolute;
+                        width: 100px;
+                        height: 200px;
+                        top: 100px;
+                        left: -35px;
+                        transform: rotate(90deg);
+                    }
+
+                       img {
+                        object-fit: cover;
+                        height: 350px;
+                        width: 106%;
+                       }
                     }
 
                     &::after{
@@ -160,12 +284,10 @@ header.header {
                     }
 
                     .custom-btn {
-                        // position: unset;
-                        right: unset;
-                        bottom: 10px;
-                        width: 90%;
-                        padding: 15px;
-                        z-index: 1;
+                        width: 95%;
+                        bottom: -25px;
+                        left: 2.5%;
+                        letter-spacing: 0.05em;
                     }
                 }
             }

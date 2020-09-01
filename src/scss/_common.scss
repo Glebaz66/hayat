@@ -1,12 +1,14 @@
 .custom-btn {
     background-color: $yellow;
-    color: $white;
-    padding: 15px 85px;
+    padding: 15px 50px;
     font-weight: bold;
     font-size: 18px;
     line-height: 22px;
     border-radius: 0;
-    width: 355px;
+    text-transform: uppercase;
+    a{
+        color: $white;
+    }
 }
 
 .section-title {
@@ -35,4 +37,15 @@
 
 html {
     scroll-behavior: smooth;
+}
+body {
+    font-family: 'TT Norms Pro';
+}
+.backdrop1 {
+    // position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }

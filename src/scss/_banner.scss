@@ -1,5 +1,4 @@
 .banner {
-
     &-img {
         img {
             position: absolute;
@@ -53,9 +52,25 @@
     }
     
     @media screen and (min-width:320px) and (max-width: 768px){
+        margin-bottom: 0;
+
         &-img {
             img {
                 position: unset;
+            }
+        }
+
+        &-inner {
+            .sub-title {
+                padding: 0;
+            }
+            .banner-list {
+                ul {
+                    padding: 0;
+                }
+            }
+            .banner-text {
+                padding: 0;
             }
         }
     }

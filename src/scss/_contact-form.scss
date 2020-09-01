@@ -23,7 +23,7 @@
         }
 
         .show-more {
-            width: 125px;
+            width: 133px;
             margin: 0 0 0 auto;
 
             &__link {
@@ -74,7 +74,12 @@
             width: 60%;
             padding: 0;
             border: none;
+            color: $white;
             
+            &:active,
+            &:focus {
+                outline: none;
+            }
             
             &:not(:last-child){
                 color: $dark-grey;
@@ -90,7 +95,7 @@
         }
     }
 
-    @media screen and(min-width:320px) and (max-width:768px){
+    @media screen and(min-width:320px) and (max-width:991px){
         padding: 0;
         .padd-0 {
             padding-right: 0;

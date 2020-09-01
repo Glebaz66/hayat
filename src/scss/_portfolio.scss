@@ -26,10 +26,6 @@
         border: 1px solid $light;
         padding: 30px;
 
-        .container {
-            margin-left: 0;
-        }
-
         .left {
             .text {
                 p {
@@ -77,8 +73,8 @@
         .info {
             position: absolute;
             top: 300px;
-            right: 85px;
-            max-width: 350px;
+            right: 150px;
+            width: 350px;
             padding: 25px 40px;
             background: $grey;
             color: $white;
@@ -88,7 +84,7 @@
                 font-weight: bold;
                 font-size: 30px;
                 line-height: 35px;
-                width: max-content;
+                // width: max-content;
                 padding: 5px 80px;
                 margin-left: -80px;
                 margin-bottom: 20px;
@@ -247,6 +243,86 @@
 
             p{
                 width: 500px;
+            }
+        }
+    }
+
+    @media screen and (min-width:320px) and (max-width:991px){
+        padding: 0;
+        margin-bottom: 60px;
+
+        .section-title {
+            position: unset;
+            color: $grey;
+            text-align: left;
+            font-size: 24px;
+            line-height: 30px;
+            padding: 40px 35px 0;
+            margin-bottom: 80px;
+
+            p {
+                width: 100%;
+            }
+        }
+
+        &-inner {
+            width: 100%;
+            border: none;
+            padding: 0;
+
+            .right {
+                margin: 0 -15px;
+                .arrows {
+                    position: relative;
+                    
+                    .arrow {
+                        background: url(../img/arrow-wh.png) no-repeat;
+                        background-size: contain!important;
+                        width: 40px;
+                        height: 40px;
+                        position: absolute;
+                        top: 115px;
+                        right: 20px;
+                    }
+                    .arrow__left {
+                        transform: rotate(180deg);
+                        left: 20px;
+                    }
+                }
+                .img {
+                    position: unset;
+                }
+                .info {
+                    position: unset;
+                    max-width: unset;
+                    margin-bottom: 30px;
+                    width: 100%;
+                    
+                    &-title {
+                        margin: -46px auto 20px 0;
+                        width: unset;
+                    }
+
+                    &-price {
+                        text-align: left;
+                    }
+
+                    &-text__sub {
+                        font-size: 12px;
+                    }
+                }
+                .slider-nav {
+                    top: -70px;
+                    right: 75px;
+
+                    .slide-counter {
+                        display: none;
+                        visibility: hidden;
+                    }
+                }
+            }
+            .left {
+                padding-left: 25px;
             }
         }
     }

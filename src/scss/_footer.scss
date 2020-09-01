@@ -68,14 +68,15 @@ footer.footer {
         font-size: 14px;
     }
 
-    @media screen and(min-width:320px) and (max-width:768px){
-        padding: 0;
+    @media screen and(min-width:320px) and (max-width:991px){
+        padding: 20px 0;
 
         .torow {
             flex-direction: column !important;
         }
         .footer-address {
             margin-bottom: 20px;
+            
             .text {
                 text-align: center;
             }
