@@ -1,5 +1,7 @@
 .contact-form {
     padding: 80px 0;
+    position: relative;
+    overflow: hidden;
 
     &-video {
         padding-left: 50px;
@@ -58,10 +60,17 @@
             }
         }
     }
-
-    .form-wrap {
-        background: url('../img/bg-form.png') no-repeat, $light;
+    .form-bg {
+        background: url('../img/bg-form.png') repeat-x, $light;
         background-size: contain;
+        position: absolute;
+        top: 0;
+        right: -40%;
+        width: 140%;
+        height: 100%;
+        z-index: -1;
+    }
+    .form-wrap {
         padding: 25px;
         
         .sub-title {
@@ -106,6 +115,7 @@
 
             .sub-title {
                 padding-left: 15px;
+                margin-bottom: 35px;
             }
 
             .show-more {

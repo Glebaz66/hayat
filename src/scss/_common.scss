@@ -41,6 +41,9 @@ html {
 body {
     font-family: 'TT Norms Pro';
 }
+.container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: 1250px;
+}
 .backdrop1 {
     // position: fixed;
     z-index: 0;
@@ -49,3 +52,7 @@ body {
     bottom: 0;
     right: 0;
 }
+
+.position-unset {
+    position: unset;
+} 
