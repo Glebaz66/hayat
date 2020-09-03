@@ -4,7 +4,7 @@ $(document).ready(function(){
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
-        // autoplay: true,
+        autoplay: true,
         autoplaySpeed: 5000,
         adaptiveHeight: true,
         fade: true,
@@ -17,7 +17,7 @@ $(document).ready(function(){
                 infinite: true,
                 slidesToShow: 1,
                 slidesToScroll: 1,
-                // autoplay: true,
+                autoplay: true,
                 autoplaySpeed: 5000,
                 adaptiveHeight: true,
                 fade: true,
@@ -53,18 +53,19 @@ $(document).ready(function(){
         $('.counter .total').text(totalSlides.length);
     }
 
+    //set first slide
+    const firstSlide = $('.portfolio').slick('slickCurrentSlide');
+    
     //get current slide
     $('.portfolio').on('afterChange', function(event, slick, currentSlide, nextSlide){
+        $('.counter .current').text('0' + (firstSlide + 1));
+
         if(!currentSlide || currentSlide < 0) return;
-        if(currentSlide == 0){
-            console.log('0000');
-            $('.counter .current').text(1);
+        if(currentSlide > 0 && currentSlide < 9){
+            $('.counter .current').text('0' + (currentSlide + 1));
         };
-        if(currentSlide < 10){
-            $('.counter .current').text('0' + $(slick.$slides.get(currentSlide)).data('slickIndex'));
-        };
-        if(currentSlide >= 10){
-            $('.counter .current').text($(slick.$slides.get(currentSlide)).data('slickIndex'));
+        if(currentSlide >= 9){
+            $('.counter .current').text(currentSlide + 1);
         };
     });
 
