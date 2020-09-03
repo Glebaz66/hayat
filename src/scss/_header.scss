@@ -1,7 +1,46 @@
 header.header {
-    .menu {
-        background: url('../img/bg-menu.png') no-repeat;
+    position: relative;
+    padding-bottom: 60px;
+    height: 670px;
+    overflow: hidden;
 
+    .menu-bg-dark__mobile {
+        display: none;
+        visibility: hidden;
+    }
+
+    .menu-bg {
+        background: url('../img/bg-menu.png') no-repeat;
+        position: absolute;
+        top: 89px;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        z-index: -1;
+    }
+
+    .menu-bg-dark {
+        background: $grey;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 42%;
+        height: 90%;
+        z-index: -1;
+    }
+
+    .line {
+        display: block;
+        width: 370px;
+        height: 12px;
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        background: $yellow;
+        z-index: 1;
+    }
+    
+    .menu {
         .navbar-nav {
             margin-top: -30px;
             justify-content: space-around;
@@ -21,92 +60,70 @@ header.header {
                 }
             }
         }
-        .header-title {
-            position: relative;
-            height: 520px;
+    }
 
-            &__inner {
-                padding: 15% 22%;
-                font-weight: 500;
-                font-size: 40px;
-                line-height: 47px;
-                letter-spacing: 0.05em;
-                
-            }
+    .header-title {
+        padding: 15% 25% 0 0;
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 47px;
+        letter-spacing: .05em;
+        color: $grey;
+    }
 
-            &::after{
-                content: '';
-                display: block;
-                width: 370px;
-                height: 12px;
-                position: absolute;
-                left: 0;
-                bottom: -5px;
-                background: $yellow;
-                z-index: 1;
+    .mobile-btn {
+        display: none;
+        visibility: hidden;
+    }
+
+    .header-banner {
+        position: absolute;
+        left: -140px;
+        top: 0;
+
+        &::after {
+            content: '';
+            background: url('../img/dots.png') no-repeat;
+            display: block;
+            width: 113px;
+            height: 200px;
+            position: absolute;
+            top: -150px;
+            right: -46px;
+            z-index: 2;
+            background-size: contain !important;
+        }
+
+        .custom-btn {
+            position: absolute;
+            right: -35px;
+            bottom: 25px;
+
+            a {
+                color: $white;
             }
         }
     }
-
     .contacts {
-        background-color: $grey;
-        height: 630px;
-        
-        &-inner {
-            padding-top: 45px;
-            position: relative;
+        padding-top: 45px;
+        position: relative;
 
-            .phone {
-                margin-right: 15px;
+        .phone {
+            margin-right: 15px;
+        }
+
+        .phone,
+        .email {
+            a {
+                color: $yellow;
+                font-weight: bold;
+                font-size: 18px;
+                line-height: 21px;
             }
-
-            .phone,
-            .email {
-                a {
-                    color: $yellow;
-                    font-weight: bold;
-                    font-size: 18px;
-                    line-height: 21px;
-                }
-            }
-            .email {
-                a {
-                    font-weight: 400;
-                }
-            }
-
-            .header-banner {
-                position: absolute;
-                left: -140px;
-                top: 150px;
-
-                .mobile {
-                    display: none;
-                    visibility: hidden;
-                }
-
-                &::after {
-                    content: '';
-                    background: url('../img/dots.png') no-repeat;
-                    display: block;
-                    width: 113px;
-                    height: 200px;
-                    position: absolute;
-                    top: -150px;
-                    right: -46px;
-                    z-index: 2;
-                    background-size: contain !important;
-                }
-
-                .custom-btn {
-                    position: absolute;
-                    right: -35px;
-                    bottom: 25px;
-
-                    a {
-                        color: $white;
-                    }
-                }
+        }
+        .email {
+            a {
+                font-weight: 400;
             }
         }
     }
@@ -170,10 +187,30 @@ header.header {
     }
 
     @media screen and(min-width:320px) and (max-width:992px) {
+        height: auto;
         margin-bottom: unset;
         
+        .menu-bg-dark__mobile {
+            display: block;
+            visibility: visible;
+            position: absolute;
+            top: 55px;
+            left: 0;
+            background: $grey;
+            width: 100%;
+            height: 96%;
+            z-index: -1;
+        }
+
+        .menu-bg,
+        .line,
+        .menu-bg-dark {
+           display: none;
+           visibility: hidden;
+        }
+    
         .menu {
-            margin-bottom: 85px;
+            margin-bottom: 20px;
             background: none !important;
             
             .icon-bar {
@@ -277,90 +314,61 @@ header.header {
                 }
             }
 
-            .header-title {
+        }
+        
+        .header-title {
+            padding: 25px 18% 25px 25px;
+            color: $white;
+            font-size: 22px;
+            line-height: 30px;
+        }
+
+        .mobile-btn {
+            display: block;
+            visibility: visible;
+            position: absolute;
+            bottom: -60px;
+        }
+
+        .header-banner {
+            position: relative;
+            padding-left: 25px;
+            left: 0;
+            
+            &-img {
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .custom-btn {
                 display: none;
                 visibility: hidden;
+            }
+    
+            &::after {
+                content: '';
+                background: url(../img/dots.png) no-repeat;
+                display: block;
+                width: 113px;
+                height: 200px;
+                position: absolute;
+                top: 30%;
+                left: 0;
+                z-index: 2;
+                background-size: contain;
+                transform: rotate(90deg);
             }
         }
 
         .contacts {
-            height: auto;
-            background: url('../img/bg-menu.png') no-repeat, $grey;
-            background-position: 97% 0;
-
-            &-inner {
-                .wrap {
-                    display: none;
-                    visibility: hidden;
-                }
-
-                .email {
-                   display: none;
-                   visibility: hidden; 
-                }
-
-                .header-banner {
-                    padding: 0 15px 0;
-                    text-align: center;
-                    position: unset;
-
-                    .mobile {
-                        display: block;
-                        visibility: visible;
-                    }
-                   
-                    .header-title {
-                        font-size: 28px;
-                        color: $white;
-                        margin-bottom: 0;
-                        text-align: left;
-
-                        &__inner {
-                            padding: 0 30px 50px;
-                            margin-bottom: 30px;
-                            letter-spacing: 0.05em;
-                        }
-                    }
-
-                    &-img {
-                       margin-bottom: 25px;
-                       margin-top: -120px;
-                       padding: 0 0 0 32px;
-                       position: relative;
-
-                       &:after {
-                        content: '';
-                        background: url('../img/dots.png') no-repeat;
-                        background-size: cover !important;
-                        position: absolute;
-                        width: 100px;
-                        height: 200px;
-                        top: 100px;
-                        left: -35px;
-                        transform: rotate(90deg);
-                    }
-
-                       img {
-                        object-fit: cover;
-                        height: 350px;
-                        width: 106%;
-                       }
-                    }
-
-                    &::after{
-                        content: unset;
-                    }
-
-                    .custom-btn {
-                        width: 95%;
-                        bottom: -25px;
-                        left: 2.5%;
-                        letter-spacing: 0.05em;
-                    }
-                }
-            }
+            display: none;
+            visibility: hidden;
         }
     }
+
     @media screen and(min-width:320px) and (max-width:360px) {
         .contacts {
             &-inner {
