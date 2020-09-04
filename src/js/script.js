@@ -70,10 +70,33 @@ $(document).ready(function(){
     });
 
     //nav add backdrop when opened to mobile
+    const paddingBottom = $('.header.header .menu .navbar').css('padding-bottom');
+
     $('.navbar-toggler').on('click', function(){
-        if( $(this).hasClass('collapsed') ){
-            $('body').toggleClass('backdrop1')
-        } 
-        console.log(this.classList);
+        $('.menu').toggleClass('opened');
+
+        if($('.menu').hasClass('opened')){
+            $('.header.header .menu .navbar').css({'backgroundColor': '#fff', 'padding-bottom': '70%'})
+            $('body').css({'overflow': 'hidden'})
+        } else {
+            $('.header.header .menu .navbar').css({'backgroundColor': 'none', 'padding-bottom': paddingBottom})
+            $('body').css({'overflow': 'unset'})
+        }
+    });
+
+    //click on menu items should close menu
+    $('.menu .navbar-collapse').on('click', function(e){
+        const target = e.target;
+        // console.log(target);
+        if( target.classList.contains('mobile-social__link')) { return }
+
+        if(target.nodeName == 'A'){
+            $('.menu').removeClass('opened');
+            $('.header.header .menu .navbar').css({'backgroundColor': 'none', 'padding-bottom': paddingBottom});
+            $('body').css({'overflow': 'unset'});
+            $('.navbar-toggler').attr('aria-expanded', false);
+            $('.navbar-toggler').addClass('collapsed');
+            $('.navbar-collapse').removeClass('show');
+        }
     })
 });

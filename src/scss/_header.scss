@@ -190,6 +190,12 @@ header.header {
         height: auto;
         margin-bottom: unset;
         
+        .menu {
+            .navbar {
+                padding-right: 0;
+            }
+        }
+        
         .menu-bg-dark__mobile {
             display: block;
             visibility: visible;
@@ -211,7 +217,7 @@ header.header {
     
         .menu {
             margin-bottom: 20px;
-            background: none !important;
+            // background: none !important;
             
             .icon-bar {
                 width: 40px;
@@ -225,6 +231,7 @@ header.header {
             .navbar-toggler {
               border: none;
               background: transparent !important;
+              padding: 0;
 
                 &:active,
                 &:focus {
@@ -313,7 +320,6 @@ header.header {
                     }
                 }
             }
-
         }
         
         .header-title {
@@ -356,7 +362,7 @@ header.header {
                 height: 200px;
                 position: absolute;
                 top: 30%;
-                left: 0;
+                left: -45px;
                 z-index: 2;
                 background-size: contain;
                 transform: rotate(90deg);
@@ -377,6 +383,18 @@ header.header {
                         font-size: 16px;
                     }
                 }
+            }
+        }
+        
+        .header-banner {
+            &-img {
+                img {
+                    width: unset;
+                }
+            }
+
+            &::after {
+                top: 45%;
             }
         }
     }

@@ -6,6 +6,7 @@
     line-height: 22px;
     border-radius: 0;
     text-transform: uppercase;
+
     a{
         color: $white;
     }
@@ -44,13 +45,11 @@ body {
 .container, .container-lg, .container-md, .container-sm, .container-xl {
     max-width: 1250px;
 }
-.backdrop1 {
-    // position: fixed;
-    z-index: 0;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+.opened {
+    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.25)!important;
+    width: 100%;
+    height: 100%;
 }
 
 .position-unset {

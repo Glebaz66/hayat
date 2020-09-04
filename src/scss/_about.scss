@@ -2,10 +2,21 @@
     margin-bottom: 100px;
     width: 100%;
     height: 100%;
+    position: relative;
+
+    .about-top-right-bg {
+        position: absolute;
+        width: 45%;
+        height: 33%;
+        top: 150px;
+        right: 0;
+        z-index: 0;
+        box-shadow: -5px 20px 20px 0 rgba(0,0,0,.05);
+        background: $white;
+    }
 
     &-top {
         position: relative;
-        overflow: hidden;
 
         &-bg {
             background: $light;
@@ -31,33 +42,23 @@
                 }
             }
         }
-        
 
         &-right {
             overflow: hidden;
+            height: 100%;
 
-            &-bg {
-                position: absolute;
-                width: 137%;
-                height: 71%;
-                top: 123px;
-                right: -37%;
-                z-index: -1;
-                box-shadow: -25px 20px 40px rgba(0,0,0,.05);
-                background: $white;
-            }
             .section-title {
                 text-align: center;
             }
 
             .info {
-                padding: 40px 0px 40px 60px;
+                padding: 25px 0 0px 0px;
                 position: relative;
-                bottom: -35px;
+                bottom: -88px;
             
                 &-num {
                     font-weight: bold;
-                    font-size: 25px;
+                    font-size: 30px;
                     line-height: 29px;
                     letter-spacing: 0.05em;
                     color: $grey;
@@ -123,6 +124,10 @@
     @media screen and(min-width:320px) and (max-width:991px){
 
         margin-bottom: 20px;
+        .about-top-right-bg {
+            display: none;
+            visibility: hidden;
+        }
 
         &-top {
             margin-bottom: 30px;
@@ -163,7 +168,7 @@
                 }
 
                 .info {
-                    padding: 0 0 0 15px;
+                    padding: 0;
                     margin: 0;
                     position: unset;
 
@@ -212,7 +217,7 @@
             padding: 0 0 0 15px;
 
             .sub-title {
-                width: 100%;
+                width: 70%;
                 font-size: 24px;
                 margin-bottom: 25px;
             }

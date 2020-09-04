@@ -1,5 +1,15 @@
 .portfolio {
     padding: 30px;
+    position: relative;
+
+    .border-wrap {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        width: 74%;
+        height: 98%;
+        border: 1px solid $light;
+    }
 
     .slider {
         &:focus {
@@ -8,31 +18,15 @@
     }
 
     &-inner {
-        width: 85%;
-        border: 1px solid $light;
-        border-right-color: transparent;
         padding: 30px;
-        position: relative;
-
-        .section-title {
-            font-size: 45px;
-            position: absolute;
-            right: -1px;
-            top: -20px;
-            background: #fff;
-            text-align: right;
-            padding: 0 0 45px 30px;
-            
-            p {
-                width: 510px;
-                margin-bottom: 0;
-            }
-        }
 
         .left {
             .text {
+                width: 86%;
+
                 p {
                     font-size: 14px;
+
                     &:last-child{
                         margin-bottom: 35px;
                     }
@@ -67,189 +61,200 @@
                 }
             }
         }
-            
-        .img {
-            position: absolute;
-            top: 100px;
-            right: -35px;
+
+        .right {
+            position: relative;
             width: 100%;
-            
-            img {
+
+            .section-title {
+                font-size: 45px;
+                position: absolute;
+                right: -35px;
+                top: -40px;
+                background: #fff;
+                text-align: right;
                 width: 100%;
-                height: 300px;
-                object-fit: cover;
             }
-        }
 
-        .info {
-            position: absolute;
-            top: 300px;
-            left: 15px;
-            width: 350px;
-            padding: 25px 40px;
-            background: $grey;
-            color: $white;
-
-            &-title {
-                background: $yellow;
-                font-weight: bold;
-                font-size: 30px;
-                line-height: 35px;
-                padding: 5px 80px;
-                margin-left: -80px;
-                margin-bottom: 20px;
+            .img {
+                position: absolute;
+                top: 100px;
+                right: -35px;
+                width: 100%;
+                max-height: 375px;
+                
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
             }
-            
-            &-price {
+
+            .info {
+                position: absolute;
+                top: 300px;
+                left: -10%;
+                max-width: 400px;
+                padding: 25px 40px;
+                background: $grey;
                 color: $white;
-                font-weight: bold;
-                font-size: 30px;
-                line-height: 35px;
-                margin-bottom: 10px;
-                text-align: center;
-            }
-            
-            &-text__sub{
-                font-size: 14px;
-                line-height: 20px;
-                margin-bottom: 15px;
-            }
 
-            &-text{
-                font-size: 16px;
-                line-height: 22px;
-            }
-        }
-
-        .slider-nav {
-            position: absolute;
-            top: 400px;
-            right: 40px;
-            display: flex;
-            flex-flow: column nowrap;
-            justify-content: space-between;
-            align-items: center;
-            height: 320px;
-            width: 120px;
-
-            .slide-counter {
-                .arrow {
-                    background: url('../img/right-arrow.png') no-repeat;
-                    background-size: contain !important;
-                    width: 15px;
-                    height: 15px;
-                    position: absolute;
-                    top: 25px;
-                    right: 0;
+                &-title {
+                    background: $yellow;
+                    font-weight: bold;
+                    font-size: 30px;
+                    line-height: 35px;
+                    padding: 5px 80px;
+                    margin-left: -80px;
+                    margin-bottom: 20px;
                 }
                 
-                .arrow__left {
-                    transform: rotate(180deg);
-                    left: 0;
-                }
-
-                .counter {
-                    background: $white;
-                    padding: 20px;
-
-                    .current {
-                        font-weight: 500;
-                        font-size: 18px;
-                        line-height: 21px;
-                        color: $yellow;
-                    }
-                    .slash,.total {
-                        font-weight: 300;
-                        font-size: 12px;
-                        line-height: 14px;
-                        color: $dark-grey;
-                    
-                    }
-                }
-            }
-
-            .next {
-                &-btn {
-                    background: $white;
-                    padding: 15px 0;
-                    border: 0;
+                &-price {
+                    color: $white;
                     font-weight: bold;
+                    font-size: 30px;
+                    line-height: 35px;
+                    margin-bottom: 10px;
+                }
+                
+                &-text__sub {
                     font-size: 14px;
                     line-height: 20px;
-                    color: $yellow;
-                    text-align: left;
-                    position: relative;
+                    margin-bottom: 15px;
+                }
 
-                    &:focus,
-                    &:active {
-                        outline: none;
+                &-text{
+                    font-size: 16px;
+                    line-height: 22px;
+                }
+            }
+
+            .slider-nav {
+                position: absolute;
+                bottom: 0;
+                right: -200px;
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: space-between;
+                height: 65%;
+                width: 120px;
+
+                &__mobile {
+                    display: none;
+                    visibility: hidden;
+                }
+
+                .slide-counter {
+                    .arrow {
+                        background: url('../img/right-arrow.png') no-repeat;
+                        background-size: contain !important;
+                        width: 15px;
+                        height: 15px;
+                        position: absolute;
+                        top: 25px;
+                        right: 20px;
+                    }
+                    
+                    .arrow__left {
+                        transform: rotate(180deg);
+                        left: -15px;
                     }
 
-                    &:before {
-                        content: '';
-                        display: block;
-                        width: 40px;
-                        height: 40px;
-                        background: url(../img/right-arrow.png) no-repeat;
-                        position: absolute;
-                        top: 15px;
-                        right: -50px;
-                        z-index: 2;
-                    }
+                    .counter {
+                        background: $white;
+                        padding: 20px;
 
-                    &:after {
-                        content: '';
-                        display: block;
-                        width: 40px;
-                        height: 46px;
-                        background: #f9f9f9;
-                        position: absolute;
-                        top: 12px;
-                        right: -60px;
-                        z-index: 1;
+                        .current {
+                            font-weight: 500;
+                            font-size: 18px;
+                            line-height: 21px;
+                            color: $yellow;
+                        }
+                        .slash,.total {
+                            font-weight: 300;
+                            font-size: 12px;
+                            line-height: 14px;
+                            color: $dark-grey;
+                        }
+                    }
+                }
+
+                .next {
+                    &-btn {
+                        background: $white;
+                        padding: 15px 0;
+                        border: 0;
+                        font-weight: bold;
+                        font-size: 14px;
+                        line-height: 20px;
+                        color: $yellow;
+                        text-align: left;
+                        position: relative;
+
+                        &:focus,
+                        &:active {
+                            outline: none;
+                        }
+
+                        &:before {
+                            content: '';
+                            display: block;
+                            width: 40px;
+                            height: 40px;
+                            background: url(../img/right-arrow.png) no-repeat;
+                            position: absolute;
+                            top: 15px;
+                            right: -50px;
+                            z-index: 2;
+                        }
+
+                        &:after {
+                            content: '';
+                            display: block;
+                            width: 40px;
+                            height: 46px;
+                            background: #f9f9f9;
+                            position: absolute;
+                            top: 12px;
+                            right: -60px;
+                            z-index: 1;
+                        }
                     }
                 }
             }
         }
+    }
 
-        @media screen and (min-width: 1100px) and (max-width: 1200px){
-            .right {
-                .img {
-                    img {
-                        max-width: 500px;
-                    }
-                }
+    @media screen and (min-width: 1400px) and (max-width: 1500px){
+        .border-wrap {
+            width: 79%;
+        }
+    }
 
-                .info {
-                    max-width: 370px;
-                }
-            }
+    @media screen and (min-width: 1300px) and (max-width: 1399px){
+        .border-wrap {
+            width: 80%;
+        }
+    }
+
+    @media screen and (min-width: 1100px) and (max-width: 1299px){
+        .border-wrap {
+            width: 82%;
+        }
+    }
+
+    @media screen and (min-width: 1100px) and (max-width: 1200px){
+        .border-wrap {
+            width: 85%;
         }
 
-        @media screen and (min-width: 1201px) and (max-width: 1399px){
+        &-inner {
             .right {
                 .slider-nav {
-                    right: -80px;
+                    right: -170px;
                 }
             }
-        }
-        
-        @media screen and (min-width: 992px) and (max-width: 1200px){
-            .right {
-                .img {
-                    right: -135px;
-                }
-
-                .info {
-                    max-width: 300px;
-                    left: 50px;
-                }
-
-                .slider-nav {
-                    right: -85px;
-                }
-            }
-        }
+        } 
     }
     
     @media screen and (min-width: 992px) and (max-width: 1099px){
@@ -264,24 +269,42 @@
                 width: 500px;
             }
         }
+
+        &-inner {
+            .right {
+                .slider-nav {
+                    right: -150px;
+
+                    .next {
+                        &-btn {
+
+                            &::before {
+                                right: -35px;
+                            }
+
+                            &::after {
+                                right: -45px;
+                            }
+                        }
+                    }
+                }
+            }
+        } 
     }
 
     @media screen and (min-width:320px) and (max-width:991px){
+    
         padding: 0;
         margin-bottom: 60px;
 
-        .section-title {
-            position: unset;
-            color: $grey;
-            text-align: left;
-            font-size: 25px;
-            line-height: 35px;
-            padding: 40px 15px 0;
-            margin-bottom: 100px;
+        .padd-0 {
+            padding-right: 0;
+            padding-left: 0;
+        }
 
-            p {
-                width: 100%;
-            }
+        .border-wrap{
+            display: none;
+            visibility: hidden;
         }
 
         &-inner {
@@ -290,7 +313,16 @@
             padding: 0;
 
             .right {
-                margin: 0 -15px;
+                .section-title {
+                    position: relative;
+                    color: $grey;
+                    text-align: left;
+                    font-size: 30px;
+                    line-height: 35px;
+                    padding: 50px 30px 0;
+                    right: unset;
+                    top: unset;
+                }
 
                 .arrows {
                     position: relative;
@@ -313,25 +345,28 @@
 
                 .img {
                     position: unset;
+                    max-height: 100%;
                 }
 
                 .info {
                     position: unset;
                     max-width: unset;
                     margin-bottom: 30px;
-                    padding: 25px 20px;
+                    padding: 25px 30px;
                     width: 100%;
-                    
+                    height: unset;
+                    justify-content: unset !important;
+
                     &-title {
                         width: unset;
                         margin: -46px auto 20px 0;
-                        padding: 5px 40px;
+                        padding: 5px 30px;
                         font-weight: 500;
                     }
 
                     &-price {
                         text-align: left;
-                        font-size: 25px;
+                        font-size: 20px;
                         letter-spacing: 0.05em;
                         font-weight: 500;
 
@@ -346,9 +381,16 @@
                 }
 
                 .slider-nav {
-                    top: -100px;
-                    right: 75px;
-                    width: 100px;
+                    display: none;
+                    visibility: hidden;
+
+                    &__mobile {
+                        display: block;
+                        visibility: visible;
+                        position: unset;
+                        margin: 0 20% 20px auto;
+                        height: 60px;
+                    }
 
                     .slide-counter {
                         display: none;
@@ -360,12 +402,15 @@
                             font-size: 11px;
                             line-height: 14px;
                             font-weight: 500;
+                            padding: 0px 0;
 
                             &:before {
+                                top: 0;
                                 right: -35px;
                             }
 
                             &:after {
+                                top: 0;
                                 right: -57px;
                             }
                         }
@@ -374,11 +419,23 @@
             }
 
             .left {
-                padding-left: 0;
+                .text,
+                .portfolio-list {
+                    width: 100%;
+                    padding: 0 15px;
+                }
             }
         }
     }
 
+    @media screen and (min-width:320px) and (max-width:375px){
+        .right {
+            .section-title {
+                font-size: 25px;
+            }
+        }
+    }
+    
     @media screen and (min-width:320px) and (max-width:359px){
         &-inner {
             .right {
