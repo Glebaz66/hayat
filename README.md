@@ -1,1 +1,1 @@
-<a href="https://glebaz66.github.io/hayat/master/dist/index.html">site</a>
+<a href="https://glebaz66.github.io/hayat/dist/index.html">site</a>
